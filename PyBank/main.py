@@ -83,6 +83,7 @@ with open(PyBankCSV) as csvfile:
     # print result 
     print("Greatest increase in Profits:" + str(minValue).strip('[]'))
 
+# WRITING TEXT FILE
 # Create text file
 with open("PyBank.txt","w") as output:
 
@@ -97,4 +98,4 @@ with open("PyBank.txt","w") as output:
     
     # add new line after each line is added
     output.write('{}\n{}\n{}\n{}\n{}\n{}\n{}\n'.format(line1,line2,line3,line4,line5,line6,line7))
-    
+   
