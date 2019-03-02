@@ -76,7 +76,7 @@ with open(PyPollCSV, 'r') as csvfile:
     print("---------------------------")
 
     # print name of candidate only
-    print(winner[0][0])
+    print(f"Winner: {winner[0][0]}")
 
     #print delimiter
     print("---------------------------")
@@ -93,7 +93,7 @@ with open("PyPoll.txt","w") as output:
     line5 = "-----------------------------"
     line6 = f"{candidate[0]} : {candidate[1] / totalVotes * 100:.2F}% ({candidate[1]})"
     line7 = "-----------------------------"
-    line8 = (winner[0][0])
+    line8 = f"Winner: {winner[0][0]}"
     line9 = "-----------------------------"
 
     # add new line after each line is added
