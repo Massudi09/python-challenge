@@ -7,6 +7,7 @@ from collections import Counter
 # path to gather data from
 PyPollCSV = '/Users/zeinabmassudi/Desktop/election_data.csv'
 
+# TOTAL VOTES CALCULATIONS
 # Read in the CSV file
 with open(PyPollCSV, 'r') as csvfile:
 
@@ -29,25 +30,42 @@ with open(PyPollCSV, 'r') as csvfile:
     print (f"Total Votes: {rowsNum}")
     print("---------------------------")
 
+# CANDIDATE RESULTS
 # Read in the CSV file
 with open(PyPollCSV, 'r') as csvfile:
 
     # Separate data by comma
     csvreader = csv.reader(csvfile, delimiter=',')
     
-    # 
+    # set Counter module as counts
     counts = Counter()
+
+    # set totalVotes volume to enable percentage count
     totalVotes = 0
+
+    # loop through file and count...
     for num, row in enumerate(csvreader):
+
+        # if a value occures at least once
         if num > 0:
+
+            # ...add to candidate name count
             counts[row[2]] += 1
+
+            # ..add to totalVotes count
             totalVotes += 1
+
+    # loop through counted items     
     for candidate in counts.items():
 
-        #print election results by candidate
+        # print election results by candidate (candidate name, percentage, votes volume )
         print(f"{candidate[0]} : {candidate[1] / totalVotes * 100:.2F}% ({candidate[1]})")
-    
+
+# WINNER CALCULATION
+# Read in the CSV file  
 with open(PyPollCSV, 'r') as csvfile:
+
+    # Separate data by comma
     csvreader = csv.reader(csvfile, delimiter=',')
 
     # set colum as location on candidate name
@@ -63,7 +81,8 @@ with open(PyPollCSV, 'r') as csvfile:
     #print delimiter
     print("---------------------------")
 
-# Create text file
+# WRITING TEXT FILE
+# Create and open text file
 with open("PyPoll.txt","w") as output:
 
     # define and add each line to be added to text file
