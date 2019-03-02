@@ -1,5 +1,4 @@
-# DISCLAIMER : I know this method isn't the best, but that's the way I understand it for the time being
-
+# DISCLAIMER : I know this method isn't the best, but that's I currently comprehend it
 import os
 import csv
 
