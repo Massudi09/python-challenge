@@ -68,7 +68,7 @@ with open(PyPollCSV, 'r') as csvfile:
     # Separate data by comma
     csvreader = csv.reader(csvfile, delimiter=',')
 
-    # set colum as location on candidate name
+    # set colum as location of candidate name
     column = (row[2] for row in csvreader)
     winner = Counter(column).most_common(1)
     
